@@ -41,15 +41,15 @@ public class UsuarioController {
     }
 
     @PostMapping("/login")
-    @Operation(summary = "Fazer Login", description = "Valida as credenciais e retorna os dados do usuário logado.")
-    public org.springframework.http.ResponseEntity<Usuario> login(@RequestBody Usuario loginData) {
-
-        Usuario usuarioLogado = gerenciador.fazerLogin(loginData.getEmail(), loginData.getSenha());
+    @Operation(summary = "Fazer Login", description = "Valida as credenciais.")
+    public ResponseEntity<Usuario> login(@RequestParam String email, @RequestParam String senha) {
+    
+        Usuario usuarioLogado = gerenciador.fazerLogin(email, senha);
 
         if (usuarioLogado != null) {
-            return org.springframework.http.ResponseEntity.ok(usuarioLogado);
+            return ResponseEntity.ok(usuarioLogado);
         } else {
-            return org.springframework.http.ResponseEntity.status(401).build();
+            return ResponseEntity.status(401).build();
         }
     }
 
