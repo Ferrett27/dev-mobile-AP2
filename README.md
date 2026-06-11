@@ -1,2 +1,2 @@
 # dev-mobile-AP2
-Repositorio para a ap2 de dev mobile
+link do swagger: https://dev-mobile-ap2.onrender.com/swagger-ui/index.html#/
