@@ -4,6 +4,7 @@ import com.example.api_builds.gerenciador.GerenciadorUsuario;
 import com.example.api_builds.model.Usuario;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
