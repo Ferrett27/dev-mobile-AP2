@@ -49,7 +49,7 @@ public class InventarioController {
 
     @GetMapping("/usuario/{usuarioId}")
     @Operation(summary = "Listar Inventário do Usuário", description = "Lista todos os personagens cadastrados de um usuário específico.")
-    public List<Inventario> listarPorUsuario(@RequestParam Long usuarioId) {
+    public List<Inventario> listarPorUsuario(@PathVariable Long usuarioId) {
         return gerenciador.listarPorUsuario(usuarioId);
     }
 
