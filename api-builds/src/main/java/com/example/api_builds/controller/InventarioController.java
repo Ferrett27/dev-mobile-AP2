@@ -22,6 +22,8 @@ public class InventarioController {
     @PostMapping
     @Operation(summary = "Cadastrar Equipamentos", description = "Adiciona um personagem com seus equipamentos atuais no inventário do usuário.")
     public Inventario criar(
+            @RequestParam Long usuarioId,
+            @RequestParam Long personagemId,  
             @RequestParam Long armaId,
             @RequestParam Long disco4Id,
             @RequestParam Long disco2Id,
@@ -30,7 +32,9 @@ public class InventarioController {
             @RequestParam String statusDisco6,
             @RequestParam Integer totalSubstatus) {
 
-        Inventario inventario = Inventario.builder()
+            Inventario inventario = Inventario.builder()
+                .usuarioId(usuarioId)          
+                .personagemId(personagemId)   
                 .armaId(armaId)
                 .disco4Id(disco4Id)
                 .disco2Id(disco2Id)
