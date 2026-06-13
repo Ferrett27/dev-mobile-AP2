@@ -42,34 +42,38 @@ public class GerenciadorInventario {
     }
 
     public List<Inventario> listarPorUsuario(Long usuarioId) {
-        List<Inventario> lista = new ArrayList<>();
-        String query = "SELECT * FROM inventarios WHERE usuario_id = ?";
+    List<Inventario> lista = new ArrayList<>();
+    String query = "SELECT * FROM inventarios WHERE usuario_id = ?";
 
-        try (Connection conexao = ConexaoBanco.getInstancia().getConexao();
-             PreparedStatement comandoPreparado = conexao.prepareStatement(query)) {
+    try (Connection conexao = ConexaoBanco.getInstancia().getConexao();
+         PreparedStatement comandoPreparado = conexao.prepareStatement(query)) {
 
-            comandoPreparado.setLong(1, usuarioId);
-            ResultSet resultado = comandoPreparado.executeQuery();
+        comandoPreparado.setLong(1, usuarioId);
+        ResultSet resultado = comandoPreparado.executeQuery();
 
-            while (resultado.next()) {
-                lista.add(Inventario.builder()
-                        .id(resultado.getLong("id"))
-                        .usuarioId(resultado.getLong("usuario_id"))
-                        .personagemId(resultado.getLong("personagem_id"))
-                        .armaId((Long) resultado.getObject("arma_id")) // Trata nulos do banco
-                        .disco4Id((Long) resultado.getObject("disco4_id"))
-                        .disco2Id((Long) resultado.getObject("disco2_id"))
-                        .statusDisco4(resultado.getString("status_disco4"))
-                        .statusDisco5(resultado.getString("status_disco5"))
-                        .statusDisco6(resultado.getString("status_disco6"))
-                        .totalSubstatus(resultado.getInt("total_substatus"))
-                        .build());
-            }
-        } catch (SQLException e) {
-            throw new RuntimeException("Erro ao buscar inventário", e);
+        while (resultado.next()) {
+            Object armaObj = resultado.getObject("arma_id");
+            Object disco4Obj = resultado.getObject("disco4_id");
+            Object disco2Obj = resultado.getObject("disco2_id");
+
+            lista.add(Inventario.builder()
+                    .id(resultado.getLong("id"))
+                    .usuarioId(resultado.getLong("usuario_id"))
+                    .personagemId(resultado.getLong("personagem_id"))
+                    .armaId(armaObj != null ? ((Number) armaObj).longValue() : null)
+                    .disco4Id(disco4Obj != null ? ((Number) disco4Obj).longValue() : null)
+                    .disco2Id(disco2Obj != null ? ((Number) disco2Obj).longValue() : null)
+                    .statusDisco4(resultado.getString("status_disco4"))
+                    .statusDisco5(resultado.getString("status_disco5"))
+                    .statusDisco6(resultado.getString("status_disco6"))
+                    .totalSubstatus(resultado.getInt("total_substatus"))
+                    .build());
         }
-        return lista;
+    } catch (SQLException e) {
+        throw new RuntimeException("Erro ao buscar inventário", e);
     }
+    return lista;
+}
 
     public Inventario atualizar(Long id, Inventario inv) {
         String query = "UPDATE inventarios SET arma_id = ?, disco4_id = ?, disco2_id = ?, status_disco4 = ?, status_disco5 = ?, status_disco6 = ?, total_substatus = ? WHERE id = ?";
