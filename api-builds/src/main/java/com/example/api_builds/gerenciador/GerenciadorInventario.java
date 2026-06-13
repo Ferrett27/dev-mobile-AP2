@@ -42,21 +42,21 @@ public class GerenciadorInventario {
     }
 
     public List<Inventario> listarPorUsuario(Long usuarioId) {
-    List<Inventario> lista = new ArrayList<>();
-    String query = "SELECT * FROM inventarios WHERE usuario_id = ?";
+        List<Inventario> lista = new ArrayList<>();
+        String query = "SELECT * FROM inventarios WHERE usuario_id = ?";
 
-    try (Connection conexao = ConexaoBanco.getInstancia().getConexao();
-         PreparedStatement comandoPreparado = conexao.prepareStatement(query)) {
+        try (Connection conexao = ConexaoBanco.getInstancia().getConexao();
+             PreparedStatement comandoPreparado = conexao.prepareStatement(query)) {
 
-        comandoPreparado.setLong(1, usuarioId);
-        ResultSet resultado = comandoPreparado.executeQuery();
+            comandoPreparado.setLong(1, usuarioId);
+            ResultSet resultado = comandoPreparado.executeQuery();
 
-        while (resultado.next()) {
-            Object armaObj = resultado.getObject("arma_id");
-            Object disco4Obj = resultado.getObject("disco4_id");
-            Object disco2Obj = resultado.getObject("disco2_id");
+            while (resultado.next()) {
+                Object armaObj = resultado.getObject("arma_id");
+                Object disco4Obj = resultado.getObject("disco4_id");
+                Object disco2Obj = resultado.getObject("disco2_id");
 
-            lista.add(Inventario.builder()
+                lista.add(Inventario.builder()
                     .id(resultado.getLong("id"))
                     .usuarioId(resultado.getLong("usuario_id"))
                     .personagemId(resultado.getLong("personagem_id"))
@@ -68,12 +68,12 @@ public class GerenciadorInventario {
                     .statusDisco6(resultado.getString("status_disco6"))
                     .totalSubstatus(resultado.getInt("total_substatus"))
                     .build());
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException("Erro ao buscar inventário", e);
         }
-    } catch (SQLException e) {
-        throw new RuntimeException("Erro ao buscar inventário", e);
+        return lista;
     }
-    return lista;
-}
 
     public Inventario atualizar(Long id, Inventario inv) {
         String query = "UPDATE inventarios SET arma_id = ?, disco4_id = ?, disco2_id = ?, status_disco4 = ?, status_disco5 = ?, status_disco6 = ?, total_substatus = ? WHERE id = ?";
