@@ -1,6 +1,6 @@
 # 🎮 Avaliador Proxy - Zenless Zone Zero (ZZZ)
 
-* **Disciplina:** Desen
+* **Disciplina:** Desenvolvimento Mobile
 * **Professor:** Thiago Souza
 * **Aluno:** Rodrigo de Sousa Ferrett
 
