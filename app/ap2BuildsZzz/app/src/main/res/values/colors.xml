@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <color name="zzz_fundo_escuro">#080808</color>
+    <color name="zzz_superficie">#1C1C1C</color>
+    <color name="zzz_destaque_branco">#FFFFFF</color>
+    <color name="zzz_texto_secundario">#888888</color>
+</resources>

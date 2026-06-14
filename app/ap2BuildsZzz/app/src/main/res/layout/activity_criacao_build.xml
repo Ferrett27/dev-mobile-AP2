@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main_criar_build"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/zzz_fundo_escuro">
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="24dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="CRIAR NOVA BUILD"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:layout_marginTop="32dp"
+                android:layout_marginBottom="24dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Agente (Personagem):"
+                android:textColor="@color/white" />
+
+            <Spinner
+                android:id="@+id/sp_personagem"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:backgroundTint="@color/white"
+                android:popupBackground="@color/zzz_superficie"
+                android:layout_marginBottom="16dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="W-Engine (Arma):"
+                android:textColor="@color/white" />
+
+            <Spinner
+                android:id="@+id/sp_arma"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:backgroundTint="@color/white"
+                android:popupBackground="@color/zzz_superficie"
+                android:layout_marginBottom="16dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Drive Discs (Conjunto 4 Peças):"
+                android:textColor="@color/white" />
+
+            <Spinner
+                android:id="@+id/sp_set4"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:backgroundTint="@color/white"
+                android:popupBackground="@color/zzz_superficie"
+                android:layout_marginBottom="16dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Drive Discs (Conjunto 2 Peças):"
+                android:textColor="@color/white" />
+
+            <Spinner
+                android:id="@+id/sp_set2"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:backgroundTint="@color/white"
+                android:popupBackground="@color/zzz_superficie"
+                android:layout_marginBottom="16dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Status Principal - Disco 4, 5 e 6:"
+                android:textColor="@color/white" />
+
+            <Spinner
+                android:id="@+id/sp_disco4"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:backgroundTint="@color/white"
+                android:popupBackground="@color/zzz_superficie"
+                android:layout_marginBottom="8dp" />
+
+            <Spinner
+                android:id="@+id/sp_disco5"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:backgroundTint="@color/white"
+                android:popupBackground="@color/zzz_superficie"
+                android:layout_marginBottom="8dp" />
+
+            <Spinner
+                android:id="@+id/sp_disco6"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:backgroundTint="@color/white"
+                android:popupBackground="@color/zzz_superficie"
+                android:layout_marginBottom="24dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sub-Status Foco 1 e 2:"
+                android:textColor="@color/white" />
+
+            <Spinner
+                android:id="@+id/sp_sub1"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:backgroundTint="@color/white"
+                android:popupBackground="@color/zzz_superficie"
+                android:layout_marginBottom="8dp" />
+
+            <Spinner
+                android:id="@+id/sp_sub2"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:backgroundTint="@color/white"
+                android:popupBackground="@color/zzz_superficie"
+                android:layout_marginBottom="32dp" />
+
+            <Button
+                android:id="@+id/btn_salvar_build"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:backgroundTint="@color/white"
+                android:text="Publicar Build"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

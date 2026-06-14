@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main_cadastro"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/zzz_fundo_escuro">
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="24dp">
+
+            <TextView
+                android:id="@+id/tv_titulo_cadastro"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="CADASTRAR MEUS EQUIPAMENTOS"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:layout_marginTop="32dp"
+                android:layout_marginBottom="24dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Agente:"
+                android:textColor="@color/white" />
+
+            <Spinner
+                android:id="@+id/sp_meu_agente"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:backgroundTint="@color/white"
+                android:popupBackground="@color/zzz_superficie"
+                android:layout_marginBottom="16dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="W-Engine Equipado:"
+                android:textColor="@color/white" />
+
+            <Spinner
+                android:id="@+id/sp_minha_arma"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:backgroundTint="@color/white"
+                android:popupBackground="@color/zzz_superficie"
+                android:layout_marginBottom="16dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Discos 4 Peças Equipados:"
+                android:textColor="@color/white" />
+
+            <Spinner
+                android:id="@+id/sp_meu_set4"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:backgroundTint="@color/white"
+                android:popupBackground="@color/zzz_superficie"
+                android:layout_marginBottom="16dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Discos 2 Peças Equipados:"
+                android:textColor="@color/white" />
+
+            <Spinner
+                android:id="@+id/sp_meu_set2"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:backgroundTint="@color/white"
+                android:popupBackground="@color/zzz_superficie"
+                android:layout_marginBottom="16dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Status Principal - Disco 4, 5 e 6:"
+                android:textColor="@color/white" />
+
+            <Spinner
+                android:id="@+id/sp_meu_disco4"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:backgroundTint="@color/white"
+                android:popupBackground="@color/zzz_superficie"
+                android:layout_marginBottom="8dp" />
+
+            <Spinner
+                android:id="@+id/sp_meu_disco5"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:backgroundTint="@color/white"
+                android:popupBackground="@color/zzz_superficie"
+                android:layout_marginBottom="8dp" />
+
+            <Spinner
+                android:id="@+id/sp_meu_disco6"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:backgroundTint="@color/white"
+                android:popupBackground="@color/zzz_superficie"
+                android:layout_marginBottom="16dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Total de Sub-status Úteis (0 a 12):"
+                android:textColor="@color/white" />
+
+            <Spinner
+                android:id="@+id/sp_total_substatus"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:backgroundTint="@color/white"
+                android:popupBackground="@color/zzz_superficie"
+                android:layout_marginBottom="32dp" />
+
+            <Button
+                android:id="@+id/btn_salvar_inventario"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:backgroundTint="@color/white"
+                android:text="Salvar Personagem"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

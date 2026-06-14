@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/zzz_fundo_escuro"
+    android:padding="32dp">
+
+    <TextView
+        android:id="@+id/tv_logo_cadastro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="40dp"
+        android:text="Novo Proxy"
+        android:textColor="@color/zzz_destaque_branco"
+        android:textSize="32sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/et_nome"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <EditText
+        android:id="@+id/et_nome"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/zzz_destaque_branco"
+        android:hint="Seu nome"
+        android:padding="12dp"
+        android:textColor="@color/zzz_destaque_branco"
+        android:textColorHint="@color/zzz_texto_secundario"
+        app:layout_constraintBottom_toTopOf="@+id/et_email"
+        app:layout_constraintTop_toBottomOf="@+id/tv_logo_cadastro" />
+
+    <EditText
+        android:id="@+id/et_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="@color/zzz_destaque_branco"
+        android:hint="E-mail"
+        android:padding="12dp"
+        android:textColor="@color/zzz_destaque_branco"
+        android:textColorHint="@color/zzz_texto_secundario"
+        app:layout_constraintBottom_toTopOf="@+id/et_senha"
+        app:layout_constraintTop_toBottomOf="@+id/et_nome" />
+
+    <EditText
+        android:id="@+id/et_senha"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="@color/zzz_destaque_branco"
+        android:hint="Senha"
+        android:inputType="textPassword"
+        android:padding="12dp"
+        android:textColor="@color/zzz_destaque_branco"
+        android:textColorHint="@color/zzz_texto_secundario"
+        app:layout_constraintBottom_toTopOf="@+id/btn_cadastrar"
+        app:layout_constraintTop_toBottomOf="@+id/et_email" />
+
+    <Button
+        android:id="@+id/btn_cadastrar"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginTop="32dp"
+        android:backgroundTint="@color/zzz_destaque_branco"
+        android:text="Cadastrar Agente"
+        android:textColor="@color/zzz_fundo_escuro"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/tv_link_login"
+        app:layout_constraintTop_toBottomOf="@+id/et_senha" />
+
+    <TextView
+        android:id="@+id/tv_link_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Já tem uma conta? Faça login aqui"
+        android:textColor="@color/zzz_texto_secundario"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_cadastrar" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
